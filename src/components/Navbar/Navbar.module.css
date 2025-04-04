@@ -1,0 +1,137 @@
+/* src/components/Navbar/Navbar.module.css */
+.navbar {
+  background-color: #333;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between; /* Afasta logo do resto */
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebra */
+  gap: 1rem;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* NOVO: Container para Links e Info do Usuário */
+.navLinksAndUser {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espaço entre lista de links e info do usuário */
+    flex-wrap: wrap; /* Permite quebra entre lista e info */
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Permite quebra dentro da lista de links */
+}
+
+.navList li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.navList li a:hover {
+  color: #fff;
+}
+
+/* NOVO: Container para Info do Usuário */
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espaço entre mensagem e botão */
+}
+
+.welcomeMessage {
+    color: #ccc;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.logoutButton {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.logoutButton:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+
+
+/* Responsividade */
+@media (max-width: 992px) { /* Ponto de quebra um pouco maior para acomodar tudo */
+    .navLinksAndUser {
+        gap: 1rem; /* Diminui espaço */
+        width: 100%; /* Ocupa largura para justificar */
+        justify-content: space-between; /* Tenta manter nas pontas */
+    }
+    .navbar {
+        justify-content: center; /* Centraliza se logo quebrar */
+    }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navLinksAndUser {
+     flex-direction: column; /* Empilha lista e info */
+     align-items: flex-start;
+     width: 100%;
+     gap: 1.5rem; /* Espaço entre lista e user info */
+     margin-top: 1rem; /* Espaço abaixo do logo */
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .navList li { width: 100%; }
+  .navList li a { display: block; padding: 0.5rem 0; width: 100%; }
+
+  .userInfo {
+      width: 100%;
+      justify-content: space-between; /* Espaça msg e botão */
+      margin-top: 0.5rem; /* Pequeno espaço acima */
+      border-top: 1px solid #444; /* Linha separadora */
+      padding-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .userInfo {
+        flex-direction: column; /* Empilha msg e botão */
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .logoutButton {
+        width: 100%; /* Botão ocupa largura total */
+        text-align: center;
+    }
+}

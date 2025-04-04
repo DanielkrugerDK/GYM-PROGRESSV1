@@ -1,0 +1,232 @@
+/* src/pages/Dashboard/Dashboard.module.css */
+
+.dashboardContainer {
+  padding: 1rem;
+}
+
+/* --- NOVO: Estilos para o Seletor de Treino --- */
+.seletorContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaçamento entre label, select e botão */
+  background-color: #2a2a2a; /* Fundo ligeiramente diferente */
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+}
+
+.seletorContainer label {
+  font-weight: bold;
+  color: #ccc;
+  white-space: nowrap; /* Evita quebra de linha no label */
+}
+
+.treinoSelect {
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  flex-grow: 1; /* Ocupa espaço disponível */
+  min-width: 200px; /* Largura mínima */
+}
+.treinoSelect:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.5);
+}
+.treinoSelect:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.botaoResetProgresso {
+    padding: 0.6rem 1rem;
+    background-color: #ff9800; /* Laranja */
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+}
+.botaoResetProgresso:hover:not(:disabled) {
+    background-color: #fb8c00;
+}
+.botaoResetProgresso:disabled {
+    background-color: #555;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- Estilos do Card de Exercício --- */
+.exercicioCard {
+  background-color: #2f2f2f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ajuda a conter animações */
+  /* position: relative; */ /* Remover se não for mais necessário */
+}
+
+.exercicioCard h2 {
+  margin-top: 0;
+  color: #00bcd4;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.anotacoes {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.seriesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.serieItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0.2rem;
+  border-bottom: 1px solid #444;
+  /* Background e Opacidade controlados por Framer Motion Variants */
+}
+
+.serieItem:last-child {
+  border-bottom: none;
+}
+
+/* Classe para aplicar o texto tachado nos elementos internos */
+.textoConcluido {
+    text-decoration: line-through;
+    color: #aaa !important; /* Usa !important para garantir sobreposição */
+    opacity: 0.7;
+}
+
+.serieNumero {
+  font-weight: bold;
+  min-width: 60px;
+  transition: color 0.3s, opacity 0.3s; /* Mantém transição suave para cor/opacidade do texto */
+}
+
+.serieReps {
+  color: #bbb;
+  min-width: 60px;
+   transition: color 0.3s, opacity 0.3s;
+}
+
+.cargaInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cargaInputContainer label {
+  font-size: 0.9em;
+  color: #ccc;
+   transition: color 0.3s, opacity 0.3s;
+}
+
+.cargaInput {
+  width: 60px;
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.cargaInput::-webkit-outer-spin-button,
+.cargaInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cargaInput:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.botaoConcluir {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  /* Transformações controladas por Framer Motion */
+}
+
+/* --- Botão de Finalizar (Estilo base, funcionalidade futura) --- */
+.botaoFinalizarTreino {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #00bcd4;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    /* Transições controladas por Framer Motion se aplicado */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    /* Ajustes para telas menores */
+}
+
+@media (max-width: 600px) {
+    .seletorContainer {
+        gap: 0.5rem;
+        padding: 0.8rem;
+    }
+     .treinoSelect {
+        min-width: 150px; /* Reduz largura mínima */
+     }
+     .botaoResetProgresso {
+         width: 100%; /* Botão ocupa linha inteira */
+         margin-top: 0.5rem;
+     }
+
+    .serieItem {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        padding: 1rem 0;
+        position: relative; /* Necessário para posicionar botão absoluto */
+    }
+    .cargaInputContainer {
+        width: 100%;
+        margin-top: 0.5rem;
+        justify-content: flex-end;
+        order: 3; /* Coloca depois do botão */
+    }
+    .botaoConcluir {
+        position: absolute;
+        right: 0.5rem;
+        top: 1rem;
+        transform: none;
+        order: 2; /* Coloca antes do input */
+    }
+     .exercicioCard {
+         padding-right: 1.5rem; /* Ajusta padding */
+     }
+}

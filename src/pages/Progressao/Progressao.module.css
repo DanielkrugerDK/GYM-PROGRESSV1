@@ -1,0 +1,201 @@
+/* src/pages/Progressao/Progressao.module.css */
+
+.progressaoContainer {
+  padding: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+.progressaoContainer h1 {
+  color: #00bcd4; /* Ciano */
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.historicoList h2,
+.graficosContainer h2 {
+    color: #b3e5fc; /* Azul claro */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed #555;
+    padding-bottom: 0.3rem;
+}
+
+/* --- Estilos Gráfico --- */
+.graficosContainer {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    padding-left: 2rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.graficosContainer p {
+    color: #aaa;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.avisoGrafico {
+    font-style: italic;
+    color: #ffcc80; /* Laranja claro */
+}
+
+
+.seletorGrafico {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.seletorGrafico label {
+    font-weight: bold;
+    color: #ccc;
+    white-space: nowrap;
+}
+
+.exercicioSelect {
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex-grow: 1;
+    min-width: 200px;
+}
+.exercicioSelect:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.5);
+}
+ .exercicioSelect:disabled {
+     opacity: 0.6;
+     cursor: not-allowed;
+     background-color: #444;
+ }
+
+
+/* --- Estilos Tabela --- */
+.historicoList {
+    margin-top: 1rem;
+}
+
+.historicoList table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #2f2f2f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.historicoList thead {
+    background-color: #3a3a3a;
+}
+
+.historicoList th,
+.historicoList td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  color: #ccc;
+}
+
+.historicoList th {
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.historicoList td {
+  font-size: 0.95em;
+}
+
+.historicoList tbody tr:nth-child(even) {
+  background-color: #333333;
+}
+
+.historicoList tbody tr:hover {
+  background-color: #404040;
+}
+
+/* --- CORREÇÃO TABELA RESPONSIVA (MOBILE) --- */
+@media (max-width: 768px) {
+    .historicoList thead {
+        display: none;
+    }
+
+    .historicoList table,
+    .historicoList tbody,
+    .historicoList tr,
+    .historicoList td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box; /* Inclui padding na largura total */
+    }
+
+    .historicoList tr {
+        margin-bottom: 1rem;
+        border: 1px solid #444;
+        border-radius: 6px;
+        padding: 0.5rem 0;
+        background-color: #333;
+        overflow: hidden; /* Garante que o ::before não vaze */
+    }
+
+     .historicoList td {
+        border: none;
+        border-bottom: 1px dashed #444;
+        position: relative;
+        text-align: right;
+        /* Ajuste crucial: Garante padding em todos os lados E mais à esquerda para o label */
+        padding: 0.6rem 1rem 0.6rem 55%; /* Aumenta padding esquerdo, mantém direito */
+        min-height: 1.5em; /* Mesma altura do ::before ajuda alinhamento */
+        display: flex; /* Usa flexbox para alinhar label e valor */
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: flex-end; /* Coloca o valor no final (direita) */
+    }
+
+    .historicoList td:last-child {
+        border-bottom: none;
+    }
+
+    .historicoList td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        /* Ajusta largura do label de acordo com o padding-left do td */
+        width: calc(55% - 2rem); /* 55% (padding-left) - 1rem (left) - 1rem (espaço antes do valor) */
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: #b3e5fc;
+        /* Remove alinhamento vertical daqui, pois o flex no td cuida disso */
+        /* top: 50%; */
+        /* transform: translateY(-50%); */
+        /* Garante que o label fique alinhado com o centro do flex container (td) */
+        line-height: 1.5em; /* Igual ao min-height do td */
+    }
+}
+.errorApi {
+  color: #ff7f7f; /* Vermelho claro */
+  background-color: rgba(255, 127, 127, 0.1);
+  border: 1px solid #ff7f7f;
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-top: 1rem; /* Espaço acima */
+  text-align: center;
+  font-size: 0.9em;
+}

@@ -1,0 +1,122 @@
+/* Estilos para LoginPage.module.css e RegisterPage.module.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 10rem); /* Calcula altura considerando navbar/footer */
+    padding: 2rem;
+  }
+  
+  .form {
+    background-color: #2f2f2f;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px; /* Limita largura do formulário */
+    border: 1px solid #444;
+  }
+  
+  .form h2 {
+    text-align: center;
+    color: #00bcd4; /* Ciano */
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    font-weight: bold;
+  }
+  
+  .formGroup input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  .formGroup input:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.5);
+  }
+  .formGroup input:disabled {
+      background-color: #444;
+      cursor: not-allowed;
+  }
+  
+  
+  .submitButton {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4; /* Ciano */
+    color: #111;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin-top: 1rem;
+  }
+  .submitButton:hover:not(:disabled) {
+    background-color: #0097a7;
+  }
+   .submitButton:disabled {
+       background-color: #555;
+       opacity: 0.7;
+       cursor: not-allowed;
+   }
+  
+  
+  .error {
+    color: #ff7f7f; /* Vermelho claro */
+    background-color: rgba(255, 127, 127, 0.1);
+    border: 1px solid #ff7f7f;
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  .success {
+      color: #a5d6a7; /* Verde claro */
+      background-color: rgba(165, 214, 167, 0.1);
+      border: 1px solid #a5d6a7;
+      padding: 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      text-align: center;
+       font-size: 0.9em;
+  }
+  
+  .loginLink,
+  .registerLink {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9em;
+      color: #ccc;
+  }
+  
+  .loginLink a,
+  .registerLink a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+  }
+  .loginLink a:hover,
+  .registerLink a:hover {
+      text-decoration: underline;
+  }
