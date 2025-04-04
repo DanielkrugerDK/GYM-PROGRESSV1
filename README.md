@@ -9,7 +9,10 @@ Construído com foco em uma experiência de usuário fluida e reativa, utilizand
 ## 🎬 Preview (Placeholder)
 
 <p align="center">
-  <video controls width="600" src="/video/amostra.mp4"></video>
+  <video controls width="600" style="max-width: 100%;">
+    <source src="/video/amostra.mp4" type="video/mp4">
+    Seu navegador não suporta a tag de vídeo. Você pode baixar o vídeo <a href="/video/amostra.mp4">aqui</a>.
+  </video>
 </p>
 
 ## ✨ Funcionalidades Implementadas
