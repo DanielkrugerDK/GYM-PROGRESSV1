@@ -25,6 +25,7 @@ Construído com foco em uma experiência de usuário fluida e reativa, utilizand
 *   **Gerenciamento de Exercícios:**
     *   Cadastro de novos exercícios (nome, grupo muscular opcional).
     *   Listagem de exercícios cadastrados.
+    *   Filtro para buscar exercicios ja cadastrados.
     *   Remoção de exercícios.
     *   (Exercícios atualmente são globais, não específicos por usuário).
 *   **Montagem de Treinos:**
@@ -45,6 +46,7 @@ Construído com foco em uma experiência de usuário fluida e reativa, utilizand
 *   **Página de Progressão:**
     *   Exibe o histórico completo de séries concluídas em formato de tabela (mais recentes primeiro).
     *   Dropdown para selecionar um exercício específico.
+    *   Filtro de busca de exercicios ja feitos.
     *   Gráfico dinâmico (Recharts) mostrando a evolução da carga utilizada para o exercício selecionado ao longo do tempo.
     *   Layout responsivo para tabela e gráfico.
 *   **Interface e UX:**
