@@ -394,3 +394,59 @@
     text-align: center;
     color: #aaa;
 }
+
+.filtroInputContainer {
+    margin-bottom: 1rem; /* Espaço abaixo do filtro */
+  }
+  
+  .filtroInput {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+  .filtroInput:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.5);
+  }
+  
+  .contagemFiltro {
+      font-size: 0.85em;
+      color: #aaa;
+      text-align: right;
+      margin-top: 0.5rem;
+      padding-right: 0.5rem;
+  }
+  
+  .errorApi { /* Estilo de erro genérico para API */
+      color: #ff7f7f;
+      background-color: rgba(255, 127, 127, 0.1);
+      border: 1px solid #ff7f7f;
+      padding: 0.8rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9em;
+  }
+  
+  /* Ajuste no padding da lista se necessário */
+  .listaExercicios {
+     padding: 0.5rem;
+     /* Manter outros estilos como max-height, overflow-y, etc. */
+     max-height: 300px; /* Pode ajustar altura */
+     overflow-y: auto;
+     border: 1px solid #444;
+     border-radius: 4px;
+     background-color: #2a2a2a;
+  }
+  
+  .listaExercicios p { /* Estilo para mensagens dentro da lista */
+      padding: 1rem;
+      text-align: center;
+      color: #aaa;
+  }
